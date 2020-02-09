@@ -56,10 +56,10 @@ If there is a userID parameter and its value is 10 or greater,
 redirect to second.html.
 */
 
-const url = new URL("https://my.site.com?userId=7");
-const params = new URLSearchParams(url.search);
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
 
-if (!params.has('userId')) {
+if (params.has('userId')) {
     document.location.href = "third.html";
 }
 
